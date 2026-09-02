@@ -10,6 +10,8 @@ module lab.flotavehicular {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
 
-    opens lab.flotavehicular to javafx.fxml;
+    opens lab.flotavehicular.controller to javafx.fxml;
+
     exports lab.flotavehicular;
+    exports lab.flotavehicular.model;
 }

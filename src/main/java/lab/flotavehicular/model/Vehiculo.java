@@ -34,7 +34,7 @@ public abstract class Vehiculo implements Mantenible {
         // Regla de negocio: solo se puede finalizar si está EN_RUTA
         if (estado != EstadoVehiculo.EN_RUTA) {
             throw new IllegalStateException(
-                "El vehículo [" + placa + "] no se encuentra en ruta."
+                    "El vehículo [" + placa + "] no se encuentra en ruta."
             );
         }
 
@@ -46,19 +46,29 @@ public abstract class Vehiculo implements Mantenible {
     public abstract TipoVehiculo getTipo();
 
     // Getter público: permite leer la placa desde fuera de la clase
-    public String getPlaca()        { return placa; }
+    public String getPlaca() {
+        return placa;
+    }
 
     // Getter público: permite leer la marca
-    public String getMarca()        { return marca; }
+    public String getMarca() {
+        return marca;
+    }
 
     // Getter público: permite leer el kilometraje
-    public int getKilometraje()   { return kilometraje; }
+    public int getKilometraje() {
+        return kilometraje;
+    }
 
     // Getter público: permite leer el estado actual
-    public EstadoVehiculo getEstado() { return estado; }
+    public EstadoVehiculo getEstado() {
+        return estado;
+    }
 
     // Setter público: permite cambiar el estado (lo usará la cola de mantenimiento)
-    public void setEstado(EstadoVehiculo estado) { this.estado = estado; }
+    public void setEstado(EstadoVehiculo estado) {
+        this.estado = estado;
+    }
 
     // Sobrescritura: así se mostrará el vehículo en la futura lista (ListView)
     @Override

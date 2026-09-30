@@ -1,6 +1,7 @@
 package lab.flotavehicular.model;
 
 // Colecciones necesarias: LinkedList (implementa Queue), Queue (interfaz), etc.
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.List;
@@ -23,14 +24,14 @@ public class ColaMantenimiento<T extends Vehiculo> {
         // Regla: no se puede encolar un vehículo que ya está en mantenimiento
         if (vehiculo.getEstado() == EstadoVehiculo.TALLER) {
             throw new IllegalStateException(
-                "El vehículo ya se encuentra en mantenimiento."
+                    "El vehículo ya se encuentra en mantenimiento."
             );
         }
 
         // Regla: no se puede enviar a mantenimiento un vehículo que está en ruta
         if (vehiculo.getEstado() == EstadoVehiculo.EN_RUTA) {
             throw new IllegalStateException(
-                "No puede enviar a mantenimiento un vehículo que está en ruta."
+                    "No puede enviar a mantenimiento un vehículo que está en ruta."
             );
         }
 
@@ -38,17 +39,19 @@ public class ColaMantenimiento<T extends Vehiculo> {
         vehiculo.setEstado(EstadoVehiculo.TALLER);
         filaDeEspera.offer(vehiculo);
     }
+
     public void restaurarPendiente(T vehiculo) {
         if (vehiculo.getEstado() == EstadoVehiculo.TALLER && !filaDeEspera.contains(vehiculo))
             filaDeEspera.offer(vehiculo);
     }
+
     // Atender al primer vehículo de la cola (poll lo quita del frente)
     public T atenderSiguiente() {
 
         // Regla: no hay nada que atender si la cola está vacía
         if (filaDeEspera.isEmpty()) {
             throw new IllegalStateException(
-                "No hay vehículos en la cola de mantenimiento."
+                    "No hay vehículos en la cola de mantenimiento."
             );
         }
 

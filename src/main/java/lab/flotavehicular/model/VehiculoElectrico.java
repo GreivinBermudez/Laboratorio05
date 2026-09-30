@@ -23,7 +23,10 @@ public class VehiculoElectrico extends Vehiculo {
         return porcentajeBateria;
     }
 
-    public int getCiclosDeCarga() { return ciclosDeCarga; }
+    public int getCiclosDeCarga() {
+        return ciclosDeCarga;
+    }
+
     @Override
     // Sobrescritura: cómo inicia ruta un vehículo eléctrico
     public void iniciarRuta() {
@@ -31,21 +34,21 @@ public class VehiculoElectrico extends Vehiculo {
         // Regla 1: no puede iniciar una ruta si ya está en ruta
         if (estado == EstadoVehiculo.EN_RUTA) {
             throw new IllegalStateException(
-                "El vehículo [" + placa + "] ya se encuentra en ruta."
+                    "El vehículo [" + placa + "] ya se encuentra en ruta."
             );
         }
 
         // Regla 2: si está en el taller, no puede salir
         if (this.estado == EstadoVehiculo.TALLER) {
             throw new IllegalStateException(
-                "El vehículo [" + placa + "] está en el taller. No puede salir."
+                    "El vehículo [" + placa + "] está en el taller. No puede salir."
             );
         }
 
         // Regla 3: no puede salir con menos de 15% de batería
         if (this.porcentajeBateria < 15.0) {
             throw new IllegalStateException(
-                "Batería insuficiente (" + porcentajeBateria + "%). Conecte al cargador."
+                    "Batería insuficiente (" + porcentajeBateria + "%). Conecte al cargador."
             );
         }
 

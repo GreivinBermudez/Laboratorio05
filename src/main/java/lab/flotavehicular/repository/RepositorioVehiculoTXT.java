@@ -19,14 +19,14 @@ import java.util.List;
 /**
  * Implementación del Repository que guarda una línea por vehículo en un TXT.
  */
-public class RepositorioVehiculoTxt implements RepositorioVehiculo {
+public class RepositorioVehiculoTXT implements RepositorioVehiculo {
 
     private static final String ENCABEZADO =
             "tipo;placa;marca;kilometraje;estado;energia;ciclos;tonelaje;carga;tipoCarga";
 
     private final Path archivo;
 
-    public RepositorioVehiculoTxt(Path archivo) {
+    public RepositorioVehiculoTXT(Path archivo) {
         this.archivo = archivo;
     }
 

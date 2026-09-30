@@ -1,6 +1,8 @@
 module lab.flotavehicular {
+    requires javafx.base;
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.graphics;
     requires javafx.web;
 
     requires org.controlsfx.controls;
@@ -14,4 +16,8 @@ module lab.flotavehicular {
 
     exports lab.flotavehicular;
     exports lab.flotavehicular.model;
+    exports lab.flotavehicular.dto;
+    exports lab.flotavehicular.factory;
+    exports lab.flotavehicular.repository;
+    exports lab.flotavehicular.service;
 }

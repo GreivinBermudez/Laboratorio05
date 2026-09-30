@@ -46,14 +46,14 @@ public class VehiculoPesado extends VehiculoCombustion {
         // No se puede cargar un peso negativo o cero
         if (pesoEnToneladas <= 0) {
             throw new IllegalArgumentException(
-                "El peso de la mercancía debe ser mayor que cero."
+                    "El peso de la mercancía debe ser mayor que cero."
             );
         }
 
         // No se puede exceder el tonelaje máximo (sobrecarga)
         if (pesoEnToneladas > tonelajeMaximo) {
             throw new IllegalArgumentException(
-                "Sobrecarga: el camión solo soporta " + tonelajeMaximo + " toneladas."
+                    "Sobrecarga: el camión solo soporta " + tonelajeMaximo + " toneladas."
             );
         }
 
@@ -68,7 +68,7 @@ public class VehiculoPesado extends VehiculoCombustion {
         // Regla propia del pesado: debe llevar carga
         if (cargaActual == 0.0) {
             throw new IllegalStateException(
-                "El camión [" + placa + "] no puede salir a ruta vacío."
+                    "El camión [" + placa + "] no puede salir a ruta vacío."
             );
         }
 

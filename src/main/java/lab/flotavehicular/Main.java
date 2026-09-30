@@ -1,6 +1,7 @@
 package lab.flotavehicular;
 
 // Importaciones de JavaFX necesarias para lanzar la app
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,7 +18,7 @@ public class Main extends Application {
 
         // FXMLLoader lee el archivo FXML (la vista). Aún NO existe, lo crearemos en clase
         FXMLLoader loader = new FXMLLoader(
-                Main.class.getResource("/lab/flotavehicular/view/flotaView.fxml")
+                Main.class.getResource("/lab/flotavehicular/view/Flotaview.fxml")
         );
 
         // La escena se construye cargando el FXML

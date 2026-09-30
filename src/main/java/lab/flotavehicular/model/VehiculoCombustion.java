@@ -17,7 +17,9 @@ public class VehiculoCombustion extends Vehiculo {
     }
 
     // Getter público: la vista necesita el nivel de combustible para la barra de progreso
-    public double getNivelCombustible() { return nivelCombustible; }
+    public double getNivelCombustible() {
+        return nivelCombustible;
+    }
 
     @Override
     // Sobrescritura: cómo inicia ruta un vehículo de combustión
@@ -26,21 +28,21 @@ public class VehiculoCombustion extends Vehiculo {
         // Regla 1: si está en el taller, no puede salir
         if (estado == EstadoVehiculo.TALLER) {
             throw new IllegalStateException(
-                "El vehículo [" + placa + "] está en el taller. No puede salir."
+                    "El vehículo [" + placa + "] está en el taller. No puede salir."
             );
         }
 
         // Regla 2: si ya está en ruta, no puede iniciar otra
         if (estado == EstadoVehiculo.EN_RUTA) {
             throw new IllegalStateException(
-                "El vehículo [" + placa + "] ya se encuentra en ruta."
+                    "El vehículo [" + placa + "] ya se encuentra en ruta."
             );
         }
 
         // Regla 3: no puede salir con menos de 10% de combustible
         if (nivelCombustible < 10) {
             throw new IllegalStateException(
-                "Combustible insuficiente. Debe ir a la gasolinera."
+                    "Combustible insuficiente. Debe ir a la gasolinera."
             );
         }
 
